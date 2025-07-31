@@ -1,0 +1,125 @@
+body {
+    position: relative; /* Nécessaire pour positionner l'overlay */
+    /* ... tes autres styles ... */
+    background-image: url(fond.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center; /* Centrer l'image de fond */
+    color: #ffffff; /* S'assurer que le texte principal sur le body est clair */
+}
+
+body::before {
+    content: ''; /* Obligatoire pour les pseudo-éléments */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(225, 225, 225, 0.531); /* Couleur noire avec 50% d'opacité */
+    /* Ou un filtre de flou si tu préfères: */
+    /* backdrop-filter: blur(5px); /* Peut ne pas être supporté par tous les navigateurs */
+    z-index: -1; /* Place l'overlay sous le contenu */
+}
+
+/* Assure-toi que le contenu de ta carte-profil est au-dessus de l'overlay */
+.carte-profil {
+    position: relative; /* Pour s'assurer qu'elle est au-dessus du pseudo-élément du body */
+    z-index: 1; /* Place la carte au-dessus de l'overlay du body */
+    background-color: #0a08087d; /* La couleur de fond semi-transparente de ta carte reste pertinente */
+}
+
+/* Ajuste les couleurs de texte dans la carte profil si son fond est semi-transparent */
+.carte-profil h2,
+.carte-profil p,
+.carte-profil ul li {
+    color: #000000; /* Ou une couleur foncée pour le texte dans la carte si la carte est claire */
+}
+.carte-profil {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: #8a898967;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f5f5f5; /* Ajout d'une bordure visible si besoin */
+}
+
+.skill-block {
+    margin: 25px 0;
+    text-align: left;
+}
+
+.container {
+    background-color: #e0e0e0; /* Couleur de fond de la "piste" de la barre */
+    border-radius: 20px;
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.skills {
+    height: 100%;
+    /* La largeur initiale (0) sera gérée par l'animation */
+    color: rgb(3, 0, 0);
+    line-height: 30px;
+    text-align: right;
+    border-radius: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    /* Supprimons la transition ici car nous utilisons des animations pour l'effet d'apparition */
+    /* transition: width 2s ease-in-out; */
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+/* --- Barres de Progression Spécifiques avec Couleurs --- */
+
+.html {
+    background-color: #ff0000; /* Vert */
+    animation: fillHtml 2s ease-out forwards;
+}
+
+.CSS {
+    background-color: #1400c7; /* Bleu */
+    animation: fillCss 2s ease-out forwards;
+}
+
+.JavaScript {
+    background-color: #01b60a; /* Jaune */
+    color: #333; /* Texte plus sombre pour contraste */
+    animation: fillJs 2s ease-out forwards;
+}
+
+/* --- Animations pour Remplir les Barres --- */
+
+@keyframes fillHtml {
+    0% { width: 0; }
+    100% { width: 75%; } /* La largeur finale est ici */
+}
+
+@keyframes fillCss {
+    0% { width: 0; }
+    100% { width: 50%; } /* La largeur finale est ici */
+}
+
+@keyframes fillJs {
+    0% { width: 0; }
+    100% { width: 5%; } /* La largeur finale est ici */
+}
