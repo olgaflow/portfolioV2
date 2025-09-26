@@ -2,44 +2,123 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Portfolio de Diaby Sanossi - Développeur web freelance à Bailleul">
+    <meta name="keywords" content="développeur web, portfolio, HTML, CSS, Bailleul">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mise en forme de contenu</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Diaby Sanossi - Développeur Web</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script> <!-- Script hCaptcha -->
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Témoignages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <p>
-        Dans cet article, nous faisons la proposition que la <strong>linguistique peut-être une clef de description des langages informatiques tels que HTML et CSS</strong>.
-    </p>
+    <main>
+        <section id="home" class="carte-profil">
+            <img src="moi.JPG" alt="Photo de profil de Diaby Sanossi" class="photo">
+            <h1>DIABY SANOSSI</h1>
+            <p>
+                Je m'appelle Diaby Sanossi, j'ai 37 ans, et je poursuis actuellement une formation de développeur 
+                web et mobile. Curieux, persévérant et passionné par l’univers du numérique, 
+                j’investis chaque jour dans l’acquisition de compétences solides en développement 
+                front-end et back-end. Mon objectif est de devenir un développeur full-stack capable de 
+                concevoir des projets complets, de l’idée initiale à la mise en ligne.
+            </p>
+        </section>
 
-    <p class="para2">
-        Dans cet article, nous faisons la proposition que la <span class="gras-css">linguistique peut-être une clef de description des langages informatiques tels que HTML et CSS</span>.
-    </p>
+        <section id="about">
+            <h2>Outils et Environnements</h2>
+            <ul>
+                <li>Visual Studio Code – Utilisation quotidienne</li>
+                <li>Git & GitHub – Suivi de versions, publication de projets</li>
+                <li>Notions de Responsive Design et d’accessibilité</li>
+                <li>Principes d’architecture web (client / serveur)</li>
+            </ul>
 
-    <div id="blocPrincipal"> <p class="para3">
-            La double articulation est un concept élaboré par André Martinet pour décrire le fonctionnement des langues naturelles.
-        </p>
-        <p class="para3">
-            Tout langage est doublement articulé en ce qu'il se compose de deux séries d'éléments qui participent à la production du sens.
-        </p>
-        <p class="para3">
-            La première articulation se développe au sein des mots ou syntagmes.
-        </p>
-        <p class="para3">
-            Ces syntagmes sont des unités linguistiques constituées de sons ou de la retranscription écrite de ces sons.
-        </p>
-        <p class="para3">
-            La seconde articulation est donc le fait que des sons différents agencés dans le même ordre produisent un mot différent <span class="texteItaliqueCouleur">à condition que celui-ci existe</span>.
-        </p>
-    </div>
+            <div class="skill-block">
+                <p>HTML</p>
+                <div class="container">
+                    <div class="skills html" data-skill="75">75%</div>
+                </div>
+            </div>
+            <div class="skill-block">
+                <p>CSS</p>
+                <div class="container">
+                    <div class="skills css" data-skill="50">50%</div>
+                </div>
+            </div>
+            <div class="skill-block">
+                <p>JavaScript</p>
+                <div class="container">
+                    <div class="skills javascript" data-skill="5">5%</div>
+                </div>
+            </div>
+        </section>
 
-    <div class="rollover-block">
-        <p>La double articulation est un concept élaboré par André Martinet pour décrire le fonctionnement des langues naturelles.</p>
-        <p>Tout langage est doublement articulé en ce qu'il se compose de deux séries d'éléments qui participent à la production du sens.</p>
-        <p>La première articulation se développe au sein des mots ou syntagmes.</p>
-        <p>Ces syntagmes sont des unités linguistiques constituées de sons ou de la retranscription écrite de ces sons.</p>
-        <p>La seconde articulation est donc le fait que des sons différents agencés dans le même ordre produisent un mot différent à condition que celui-ci existe.</p>
-    </div>
+        <section id="projects" class="section-projets">
+            <h2>Projets réalisés</h2>
+            <h3>Portfolio personnel</h3>
+            <p>Ce site a été conçu comme mon tout premier projet de développeur. 
+                Il m'a permis de mettre en pratique mes connaissances HTML et CSS, 
+                d'appréhender la structure d'une page web et de publier un site en ligne via GitHub.</p>
+            <h3>Site Manga</h3>
+            <p>Ce site est un projet personnel qui concerne mon manga en développement :</p>
+            <figure><img src="page1.png" alt="Page 1 du site Manga" class="project-img"></figure>
+            <figure><img src="page3.png" alt="Page 3 du site Manga" class="project-img"></figure>
+        </section>
 
+        <section id="services">
+            <h2>Mes Services</h2>
+            <div class="service-card">
+                <h3>Landing Page Basique</h3>
+                <p>200€ - 1 à 2 jours</p>
+                <p>Inclut : Design responsive, formulaire contact, mise en ligne</p>
+                <button onclick="location.href='#contact'">Demander un devis gratuit</button>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2>Témoignages</h2>
+            <div class="testimonial">
+                <p>"Diaby a créé un site parfait pour ma boulangerie ! Rapide et pro."</p>
+                <p class="author">- Jean Dupont, Boulangerie du Coin</p>
+            </div>
+            <div class="testimonial">
+                <p>"Super travail sur mon site manga, très satisfait !"</p>
+                <p class="author">- Marie L., Fan de manga</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-form-container">
+            <h2>Contactez-moi</h2>
+            <form action="https://formspree.io/f/xgvzzpgw" method="POST">
+                <label for="name">Votre Nom :</label>
+                <input type="text" id="name" name="user_name" required>
+                <label for="email">Votre Email :</label>
+                <input type="email" id="email" name="user_email" required>
+                <label for="message">Votre Message :</label>
+                <textarea id="message" name="user_message" required></textarea>
+                <!-- CAPTCHA hCaptcha avec site key -->
+                <div class="h-captcha" data-sitekey="264a5900-e4a6-4af6-9b2c-971e73749dbc"></div> <!-- Remplace par ta clé -->
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <button id="scrollToTopBtn" title="Retour en haut">↑</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
