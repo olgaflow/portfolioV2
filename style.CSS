@@ -1,125 +1,275 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    position: relative; /* Nécessaire pour positionner l'overlay */
-    /* ... tes autres styles ... */
-    background-image: url(fond.jpg);
+    font-family: 'Roboto', sans-serif;
+    background: #f4f4f4 url('fond.jpg') no-repeat center center fixed;
     background-size: cover;
-    background-attachment: fixed;
-    background-position: center; /* Centrer l'image de fond */
-    color: #ffffff; /* S'assurer que le texte principal sur le body est clair */
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
 }
 
-body::before {
-    content: ''; /* Obligatoire pour les pseudo-éléments */
-    position: absolute;
+header {
+    position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(225, 225, 225, 0.531); /* Couleur noire avec 50% d'opacité */
-    /* Ou un filtre de flou si tu préfères: */
-    /* backdrop-filter: blur(5px); /* Peut ne pas être supporté par tous les navigateurs */
-    z-index: -1; /* Place l'overlay sous le contenu */
+    background: #333;
+    padding: 10px 0;
+    z-index: 10;
 }
 
-/* Assure-toi que le contenu de ta carte-profil est au-dessus de l'overlay */
-.carte-profil {
-    position: relative; /* Pour s'assurer qu'elle est au-dessus du pseudo-élément du body */
-    z-index: 1; /* Place la carte au-dessus de l'overlay du body */
-    background-color: #0a08087d; /* La couleur de fond semi-transparente de ta carte reste pertinente */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
 }
 
-/* Ajuste les couleurs de texte dans la carte profil si son fond est semi-transparent */
-.carte-profil h2,
-.carte-profil p,
-.carte-profil ul li {
-    color: #000000; /* Ou une couleur foncée pour le texte dans la carte si la carte est claire */
+nav ul li {
+    margin: 0 15px;
 }
-.carte-profil {
-    max-width: 700px;
-    margin: 40px auto;
-    background-color: #8a898967;
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav ul li a:hover {
+    color: #00ffcc;
+}
+
+main {
+    margin-top: 70px;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.carte-profil {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
     text-align: center;
 }
 
 .photo {
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 50%;
     width: 150px;
     height: 150px;
-    border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #f5f5f5; /* Ajout d'une bordure visible si besoin */
+    border: 4px solid #00ffcc;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+#about {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .skill-block {
-    margin: 25px 0;
-    text-align: left;
+    margin: 10px auto;
+    text-align: center;
+    max-width: 600px;
 }
 
 .container {
-    background-color: #e0e0e0; /* Couleur de fond de la "piste" de la barre */
-    border-radius: 20px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    height: 20px;
     overflow: hidden;
-    height: 30px;
-    width: 100%;
-    margin-top: 5px;
+    display: inline-block;
+    width: 80%;
 }
 
 .skills {
     height: 100%;
-    /* La largeur initiale (0) sera gérée par l'animation */
-    color: rgb(3, 0, 0);
-    line-height: 30px;
+    border-radius: 5px;
+    width: 0;
     text-align: right;
-    border-radius: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
-    /* Supprimons la transition ici car nous utilisons des animations pour l'effet d'apparition */
-    /* transition: width 2s ease-in-out; */
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
     color: white;
-    text-decoration: none;
-    border-radius: 10px;
+    padding-right: 5px;
+    transition: width 1s ease-in-out;
 }
 
-/* --- Barres de Progression Spécifiques avec Couleurs --- */
+.skills.html { background: #ff5733; }
+.skills.css { background: #33ff57; }
+.skills.javascript { background: #5733ff; }
 
-.html {
-    background-color: #ff0000; /* Vert */
-    animation: fillHtml 2s ease-out forwards;
+.section-projets {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    text-align: center;
 }
 
-.CSS {
-    background-color: #1400c7; /* Bleu */
-    animation: fillCss 2s ease-out forwards;
+.section-projets figure {
+    margin: 10px 0;
 }
 
-.JavaScript {
-    background-color: #01b60a; /* Jaune */
-    color: #333; /* Texte plus sombre pour contraste */
-    animation: fillJs 2s ease-out forwards;
+.project-img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-/* --- Animations pour Remplir les Barres --- */
-
-@keyframes fillHtml {
-    0% { width: 0; }
-    100% { width: 75%; } /* La largeur finale est ici */
+#services {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    text-align: center;
 }
 
-@keyframes fillCss {
-    0% { width: 0; }
-    100% { width: 50%; } /* La largeur finale est ici */
+.service-card {
+    padding: 15px;
+    text-align: center;
 }
 
-@keyframes fillJs {
-    0% { width: 0; }
-    100% { width: 5%; } /* La largeur finale est ici */
+.service-card button {
+    background: #00ffcc;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.service-card button:hover {
+    background: #00b894;
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.contact-form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+.contact-form-container input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.contact-form-container button {
+    background: #00ffcc;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact-form-container button:hover {
+    background: #00b894;
+}
+
+#testimonials {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.testimonial {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.testimonial:hover {
+    transform: scale(1.05); /* Petit effet au survol */
+}
+
+.author {
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00ffcc;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: none;
+    font-size: 18px;
+}
+
+#scrollToTopBtn:hover {
+    background: #00b894;
+}
+
+@media (max-width: 600px) {
+    .carte-profil, #services, .contact-form-container, #about, #testimonials {
+        margin: 10px;
+        padding: 10px;
+    }
+    .photo {
+        width: 120px;
+        height: 120px;
+    }
+    .project-img {
+        max-width: 90%;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
 }
