@@ -1,3 +1,5 @@
+
+/* CSS existant avec ajustements */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,13 +18,13 @@ body {
 header {
     position: fixed;
     top: 0;
-    left: 0; /* Collé à gauche */
-    width: 200px; /* Largeur fixe pour le menu */
-    height: 100%; /* Prend toute la hauteur */
-    background: transparent; /* Supprime le fond noir */
-    padding: 20px 0; /* Espacement vertical */
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: transparent;
+    padding: 20px 0;
     z-index: 10;
-    transition: all 0.3s ease; /* Animation douce */
+    transition: all 0.3s ease;
 }
 
 nav ul {
@@ -30,34 +32,34 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Empile verticalement */
-    align-items: flex-start; /* Texte à gauche */
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 nav ul li {
-    margin: 10px 0; /* Espacement entre les boutons */
+    margin: 10px 0;
 }
 
 nav ul li a {
-    display: block; /* Lien occupe tout l’espace */
-    padding: 10px 20px; /* Espacement interne */
-    color: #ffffff; /* Texte blanc */
-    text-decoration: none; /* Pas de soulignement */
-    border: 2px solid #00ffcc; /* Contour vert */
-    border-radius: 15px; /* Coins arrondis */
-    background: transparent; /* Bouton transparent */
-    transition: all 0.3s ease; /* Animation au survol */
+    display: block;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid #00ffcc;
+    border-radius: 15px;
+    background: transparent;
+    transition: all 0.3s ease;
 }
 
 /* Effet au survol */
 nav ul li a:hover {
-    background: rgba(0, 255, 204, 0.2); /* Teinte légère verte */
-    color: #00ffcc; /* Texte vert au survol */
+    background: rgba(0, 255, 204, 0.2);
+    color: #00ffcc;
 }
 
 main {
-    margin-top: 0; /* Ajuste si le header ne masque plus */
-    margin-left: 220px; /* Décalage pour éviter le menu */
+    margin-top: 0;
+    margin-left: 220px;
     padding: 20px;
 }
 
@@ -242,7 +244,7 @@ ul {
 }
 
 .testimonial:hover {
-    transform: scale(1.05); /* Petit effet au survol */
+    transform: scale(1.05);
 }
 
 .author {
@@ -270,15 +272,17 @@ ul {
 
 /* Media queries améliorées pour responsive */
 @media (max-width: 768px) {
+    /* Header : Pleine largeur, menu horizontal */
     header {
-        width: 100%; /* Pleine largeur sur mobile */
-        height: auto; /* Hauteur ajustée */
+        width: 100%;
+        height: auto;
         padding: 5px 0;
+        left: 0;
     }
 
     nav ul {
-        flex-direction: row; /* Menu horizontal sur mobile */
-        justify-content: space-around; /* Répartit les liens */
+        flex-direction: row;
+        justify-content: space-around;
     }
 
     nav ul li {
@@ -287,22 +291,24 @@ ul {
     }
 
     nav ul li a {
-        font-size: 14px; /* Texte plus petit */
+        font-size: 14px;
     }
 
+    /* Main : Supprime décalage gauche */
     main {
-        margin-left: 0; /* Supprime décalage gauche */
+        margin-left: 0;
         padding: 10px;
     }
 
+    /* Sections : Ajuste contenu */
     .carte-profil, .section-projets, #about, #services, #testimonials, .contact-form-container {
         margin: 10px;
         padding: 10px;
-        max-width: 100%; /* Pleine largeur */
+        max-width: 100%;
     }
 
     .carte-profil img.photo {
-        max-width: 100px; /* Image plus petite */
+        max-width: 100px;
         height: auto;
     }
 
@@ -315,6 +321,7 @@ ul {
         height: auto;
     }
 
+    /* Formulaire */
     .contact-form-container form {
         display: flex;
         flex-direction: column;
@@ -333,18 +340,18 @@ ul {
 
 @media (max-width: 480px) {
     nav ul li a {
-        font-size: 12px; /* Texte encore plus petit */
+        font-size: 12px;
     }
 
     .testimonial p {
-        font-size: 14px; /* Texte témoignages ajusté */
+        font-size: 14px;
     }
 
     h1 {
-        font-size: 1.8em; /* Titre plus petit */
+        font-size: 1.8em;
     }
 
     h2 {
-        font-size: 1.5em; /* Sous-titres ajustés */
+        font-size: 1.5em;
     }
 }
