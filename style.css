@@ -43,7 +43,7 @@ nav ul li a {
     padding: 10px 20px; /* Espacement interne */
     color: #ffffff; /* Texte blanc */
     text-decoration: none; /* Pas de soulignement */
-    border: 2px solid #00ffcc; /* Contour vert (comme ta photo) */
+    border: 2px solid #00ffcc; /* Contour vert */
     border-radius: 15px; /* Coins arrondis */
     background: transparent; /* Bouton transparent */
     transition: all 0.3s ease; /* Animation au survol */
@@ -268,22 +268,83 @@ ul {
     background: #00b894;
 }
 
-@media (max-width: 600px) {
-    .carte-profil, #services, .contact-form-container, #about, #testimonials {
-        margin: 10px;
-        padding: 10px;
+/* Media queries améliorées pour responsive */
+@media (max-width: 768px) {
+    header {
+        width: 100%; /* Pleine largeur sur mobile */
+        height: auto; /* Hauteur ajustée */
+        padding: 5px 0;
     }
-    .photo {
-        width: 120px;
-        height: 120px;
-    }
-    .project-img {
-        max-width: 90%;
-    }
+
     nav ul {
-        flex-direction: column;
+        flex-direction: row; /* Menu horizontal sur mobile */
+        justify-content: space-around; /* Répartit les liens */
     }
+
     nav ul li {
         margin: 5px 0;
+        padding: 5px 10px;
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Texte plus petit */
+    }
+
+    main {
+        margin-left: 0; /* Supprime décalage gauche */
+        padding: 10px;
+    }
+
+    .carte-profil, .section-projets, #about, #services, #testimonials, .contact-form-container {
+        margin: 10px;
+        padding: 10px;
+        max-width: 100%; /* Pleine largeur */
+    }
+
+    .carte-profil img.photo {
+        max-width: 100px; /* Image plus petite */
+        height: auto;
+    }
+
+    .skill-block {
+        width: 100%;
+    }
+
+    .project-img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .contact-form-container form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact-form-container label, .contact-form-container input, .contact-form-container textarea {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    .contact-form-container .h-captcha {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 12px; /* Texte encore plus petit */
+    }
+
+    .testimonial p {
+        font-size: 14px; /* Texte témoignages ajusté */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Titre plus petit */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Sous-titres ajustés */
     }
 }
