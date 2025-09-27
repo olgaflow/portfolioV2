@@ -16,26 +16,30 @@ body {
 header {
     position: fixed;
     top: 0;
-    width: 100%;
-    background: #333;
+    left: 0; /* Déplace le header à gauche */
+    width: auto; /* Ajuste à la taille du contenu */
+    background: #050505; /* Couleur initiale */
     padding: 10px 0;
     z-index: 10;
+    transition: background 0.6s ease; /* Animation douce */
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Change à block pour vertical */
+    flex-direction: column; /* Empile les éléments verticalement */
 }
 
 nav ul li {
-    margin: 0 15px;
+    padding: 10px 20px; /* Ajoute de l'espace pour lisibilité */
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Supprime le soulignement */
+    display: block; /* Assure que le lien occupe tout l'espace du li */
 }
 
 nav ul li a:hover {
