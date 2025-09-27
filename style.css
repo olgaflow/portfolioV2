@@ -13,52 +13,8 @@ body {
     text-align: center;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background: transparent;
-    padding: 20px 0;
-    z-index: 10;
-    transition: all 0.3s ease;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-nav ul li {
-    margin: 10px 0;
-}
-
-nav ul li a {
-    display: block;
-    padding: 10px 20px;
-    color: #ffffff;
-    text-decoration: none;
-    border: 2px solid #00ffcc;
-    border-radius: 15px;
-    background: transparent;
-    transition: all 0.3s ease;
-}
-
-/* Effet au survol */
-nav ul li a:hover {
-    background: rgba(0, 255, 204, 0.2);
-    color: #00ffcc;
-}
-
 main {
-    margin-top: 0;
-    margin-left: 220px;
-    padding: 20px;
+    padding: 20px; /* Pas de margin-left, plus de header */
 }
 
 .carte-profil {
@@ -268,34 +224,9 @@ ul {
     background: #00b894;
 }
 
-/* Media queries améliorées pour responsive */
+/* Media queries pour responsive */
 @media (max-width: 768px) {
-    header {
-        width: 100%; /* Pleine largeur */
-        height: auto; /* Hauteur ajustée */
-        padding: 5px 0;
-        background: rgba(5, 5, 5, 0.9); /* Fond semi-transparent pour visibilité */
-        top: 0;
-        left: 0;
-    }
-
-    nav ul {
-        flex-direction: row; /* Menu horizontal */
-        justify-content: space-around; /* Répartit les liens */
-    }
-
-    nav ul li {
-        margin: 5px 0;
-        padding: 5px 10px;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-        color: #fff; /* Assure contraste */
-    }
-
     main {
-        margin-left: 0; /* Supprime décalage */
         padding: 10px;
     }
 
@@ -336,10 +267,6 @@ ul {
 }
 
 @media (max-width: 480px) {
-    nav ul li a {
-        font-size: 12px;
-    }
-
     .testimonial p {
         font-size: 14px;
     }
