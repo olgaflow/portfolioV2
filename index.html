@@ -28,10 +28,10 @@
         <section id="about">
             <h2>Outils et Environnements</h2>
             <ul>
-                <li>Visual Studio Code – Utilisation quotidienne</li>
-                <li>Git & GitHub – Suivi de versions, publication de projets</li>
-                <li>Notions de Responsive Design et d’accessibilité</li>
-                <li>Principes d’architecture web (client / serveur)</li>
+                <li><strong>Visual Studio Code</strong> – Utilisation quotidienne pour coder et déboguer.</li>
+                <li><strong>Git & GitHub</strong> – Gestion de versions et publication de projets en ligne.</li>
+                <li><strong>Responsive Design</strong> – Adaptation des sites pour tous les appareils.</li>
+                <li><strong>Architecture web</strong> – Compréhension client/serveur et bases de déploiement.</li>
             </ul>
 
             <div class="skill-block">
@@ -63,17 +63,36 @@
             <h3>Site Manga</h3>
             <p>Ce site est un projet personnel qui concerne mon manga en développement :</p>
             <figure><img src="page1.png" alt="Page 1 du site Manga" class="project-img"></figure>
-            <figure><img src="page3.png" alt="Page 3 du site Manga" class="project-img"></figure>
+    
         </section>
 
         <section id="services">
             <h2>Mes Services</h2>
-            <div class="service-card">
-                <h3>Landing Page Basique</h3>
-                <p>200€ - 1 à 2 jours</p>
-                <p>Inclut : Design responsive, formulaire contact, mise en ligne</p>
-                <button onclick="location.href='#contact'">Demander un devis gratuit</button>
+            <div class="services-container">
+                <div class="service-card">
+                    <h3>Landing Page Basique</h3>
+                    <p class="price">200 € - 1 à 2 jours</p>
+                    <p>Inclut : Design responsive, formulaire de contact, mise en ligne</p>
+                </div>
+                <div class="service-card">
+                    <h3>Site Classique (Plusieurs Pages)</h3>
+                    <p class="price">400 € à 600 €</p>
+                    <p>Inclus : Design et intégration de 3 à 5 pages (ex: Accueil, Services, À Propos, Contact)</p>
+                </div>
+                <div class="service-card">
+                    <h3>Site E-commerce</h3>
+                    <p class="price">À partir de 1800 €</p>
+                    <p>Inclus : Design et intégration d'un site sur mesure, intégration d'une plateforme d'e-commerce, configuration des produits et des méthodes de paiement</p>
+                </div>
+                <div class="service-card local-service">
+                    <h3>Un service web local et sur mesure</h3>
+                    <p>En tant que développeur web local, je m'engage à être votre partenaire de proximité.</p>
+                    <p>Je me déplace dans un rayon de 10 km autour de Tourcoing pour vous rencontrer et discuter de vos besoins en personne.</p>
+                    <p>Mon approche est simple : vous offrir un service sur mesure et une relation de confiance.</p>
+                    <p>Ensemble, nous créerons un site web qui reflète l'âme de votre entreprise.</p>
+                </div>
             </div>
+            <button onclick="location.href='#contact'">Demander un devis gratuit</button>
         </section>
 
         <section id="testimonials">
@@ -92,11 +111,11 @@
             <h2>Contactez-moi</h2>
             <form action="https://formspree.io/f/xgvzzpgw" method="POST">
                 <label for="name">Votre Nom :</label>
-                <input type="text" id="name" name="user_name" required>
+                <input type="text" id="name" name="user_name" required autocomplete="name">
                 <label for="email">Votre Email :</label>
-                <input type="email" id="email" name="user_email" required>
+                <input type="email" id="email" name="user_email" required autocomplete="email">
                 <label for="message">Votre Message :</label>
-                <textarea id="message" name="user_message" required></textarea>
+                <textarea id="message" name="user_message" required autocomplete="off"></textarea>
                 <!-- CAPTCHA hCaptcha avec site key -->
                 <div class="h-captcha" data-sitekey="264a5900-e4a6-4af6-9b2c-971e73749dbc"></div> <!-- Remplace par ta clé -->
                 <button type="submit">Envoyer</button>
@@ -106,6 +125,30 @@
 
     <button id="scrollToTopBtn" title="Retour en haut">↑</button>
 
+    <footer>
+        <p>&copy; 2025 Diaby Sanossi - Développeur Web | SIRET : 838 131 811 00039</p>
+        <p>Basé à Bailleul, disponible dans un rayon de 10 km autour de Tourcoing</p>
+        <p>Pour me contacter, utilisez le formulaire ci-dessus.</p>
+    </footer>
+
+    <!-- Bannière de consentement aux cookies -->
+    <div id="cookie-consent" class="cookie-consent">
+        <p>Ce site utilise des cookies pour le formulaire de contact. <button onclick="acceptCookies()">Accepter</button></p>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+        // Gestion basique des cookies
+        function acceptCookies() {
+            document.getElementById('cookie-consent').style.display = 'none';
+            document.cookie = "cookieConsent=true; max-age=31536000"; // 1 an
+        }
+        // Vérifie si les cookies sont acceptés au chargement
+        window.onload = function() {
+            if (!document.cookie.includes("cookieConsent=true")) {
+                document.getElementById('cookie-consent').style.display = 'block';
+            }
+        };
+    </script>
 </body>
 </html>
