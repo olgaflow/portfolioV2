@@ -1,154 +1,184 @@
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Portfolio de Diaby Sanossi - Développeur web freelance à Bailleul">
-    <meta name="keywords" content="développeur web, portfolio, HTML, CSS, Bailleul">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diaby Sanossi - Développeur Web</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://js.hcaptcha.com/1/api.js" async defer></script> <!-- Script hCaptcha -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diaby Sanossi - Développeur Web</title>
+
+  <!-- fonts / css -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main>
+    <!-- Accueil -->
+    <section id="home" class="carte-profil">
+      <img src="moi.jpg" alt="Photo de profil de Diaby Sanossi" class="photo">
+      <h1>DIABY SANOSSI</h1>
+      <p>
+        Je m'appelle Diaby Sanossi, j'ai 37 ans, et je poursuis actuellement une formation de développeur
+        web et mobile. Curieux, persévérant et passionné par l’univers du numérique, j’investis chaque jour
+        dans l’acquisition de compétences solides en développement front-end et back-end.
+      </p>
+    </section>
 
-    <main>
-        <section id="home" class="carte-profil">
-            <img src="moi.jpg" alt="Photo de profil de Diaby Sanossi" class="photo">
-            <h1>DIABY SANOSSI</h1>
-            <p>
-                Je m'appelle Diaby Sanossi, j'ai 37 ans, et je poursuis actuellement une formation de développeur 
-                web et mobile. Curieux, persévérant et passionné par l’univers du numérique, 
-                j’investis chaque jour dans l’acquisition de compétences solides en développement 
-                front-end et back-end. Mon objectif est de devenir un développeur full-stack capable de 
-                concevoir des projets complets, de l’idée initiale à la mise en ligne.
-            </p>
-        </section>
+    <!-- À propos -->
+    <section id="about">
+      <h2>Outils et Environnements</h2>
+      <ul>
+        <li><strong>Visual Studio Code</strong> – Utilisation quotidienne pour coder et déboguer.</li>
+        <li><strong>Git & GitHub</strong> – Gestion de versions et publication de projets en ligne.</li>
+        <li><strong>Responsive Design</strong> – Adaptation des sites pour tous les appareils.</li>
+        <li><strong>Architecture web</strong> – Compréhension client/serveur et bases de déploiement.</li>
+      </ul>
 
-        <section id="about">
-            <h2>Outils et Environnements</h2>
-            <ul>
-                <li><strong>Visual Studio Code</strong> – Utilisation quotidienne pour coder et déboguer.</li>
-                <li><strong>Git & GitHub</strong> – Gestion de versions et publication de projets en ligne.</li>
-                <li><strong>Responsive Design</strong> – Adaptation des sites pour tous les appareils.</li>
-                <li><strong>Architecture web</strong> – Compréhension client/serveur et bases de déploiement.</li>
-            </ul>
+      <div class="skill-block">
+        <p>HTML</p>
+        <div class="container"><div class="skills html" data-skill="75">75%</div></div>
+      </div>
+      <div class="skill-block">
+        <p>CSS</p>
+        <div class="container"><div class="skills css" data-skill="50">50%</div></div>
+      </div>
+      <div class="skill-block">
+        <p>JavaScript</p>
+        <div class="container"><div class="skills javascript" data-skill="5">5%</div></div>
+      </div>
+    </section>
 
-            <div class="skill-block">
-                <p>HTML</p>
-                <div class="container">
-                    <div class="skills html" data-skill="75">75%</div>
-                </div>
+    <!-- Projets -->
+    <section id="projects" class="section-projets">
+      <h2>Projets réalisés</h2>
+
+      <h3>Portfolio personnel</h3>
+      <p>Ce site a été conçu comme mon tout premier projet de développeur.</p>
+
+      <h3>Site Manga</h3>
+      <p>Ce site est un projet personnel qui concerne mon manga en développement :</p>
+
+      <!-- projet manga : on utilise la même structure "project-figure" -->
+      <figure class="project-figure">
+        <img src="page1.png" alt="Page 1 du site Manga" class="project-img">
+      </figure>
+
+      <h3>Projet : Site Vitrine "Boulangerie Lucas & Co"</h3>
+      <p>
+          <a href="https://olgaflow.github.io/BoulangerieLucas/" target="_blank" class="project-link">
+              Voir le site
+          </a>
+      </p>
+      
+      <div class="project-description">
+          <h4>Problématique</h4>
+          <p>Concevoir et développer un site web de démonstration pour une boulangerie artisanale. 
+          L'objectif était de créer une vitrine en ligne professionnelle qui met en valeur les produits 
+          de manière appétissante, tout en offrant une navigation claire et adaptée aux mobiles.</p>
+      
+          <h4>Solutions mises en œuvre</h4>
+          <ul>
+              <li><strong>Design sur mesure</strong> avec HTML et CSS, couleurs chaleureuses et typographie manuscrite.</li>
+              <li><strong>Expérience utilisateur</strong> : navigation simplifiée, site 100% responsive.</li>
+              <li><strong>Gestion de projet</strong> : utilisation de Git et déploiement sur GitHub Pages.</li>
+              <li><strong>Mise en avant</strong> : photos de qualité et storytelling des produits.</li>
+          </ul>
+      
+          <h4>Résultats</h4>
+          <p>Le site vitrine "Boulangerie Lucas & Co" démontre mes compétences en intégration web, design 
+          et optimisation responsive, tout en proposant une solution élégante et fonctionnelle pour un commerce local.</p>
+      </div>
+      
+      <figure>
+          <img src="11.jpg" alt="Photo de la boulangerie Lucas & Co" class="project-img">
+      </figure>
+      
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <h2>Mes Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Landing Page Basique</h3>
+                <p class="price">200 € - 1 à 2 jours</p>
+                <p>Inclut : Design responsive, formulaire de contact, mise en ligne</p>
             </div>
-            <div class="skill-block">
-                <p>CSS</p>
-                <div class="container">
-                    <div class="skills css" data-skill="50">50%</div>
-                </div>
+            <div class="service-card">
+                <h3>Site Classique (Plusieurs Pages)</h3>
+                <p class="price">400 € à 600 €</p>
+                <p>Inclus : Design et intégration de 3 à 5 pages (ex: Accueil, Services, À Propos, Contact)</p>
             </div>
-            <div class="skill-block">
-                <p>JavaScript</p>
-                <div class="container">
-                    <div class="skills javascript" data-skill="5">5%</div>
-                </div>
+            <div class="service-card">
+                <h3>Site E-commerce</h3>
+                <p class="price">À partir de 1200 €</p>
+                <p>Inclus : Design et intégration d'un site sur mesure, intégration d'une plateforme d'e-commerce, configuration des produits et des méthodes de paiement</p>
             </div>
-        </section>
-
-        <section id="projects" class="section-projets">
-            <h2>Projets réalisés</h2>
-            <h3>Portfolio personnel</h3>
-            <p>Ce site a été conçu comme mon tout premier projet de développeur. 
-                Il m'a permis de mettre en pratique mes connaissances HTML et CSS, 
-                d'appréhender la structure d'une page web et de publier un site en ligne via GitHub.</p>
-            <h3>Site Manga</h3>
-            <p>Ce site est un projet personnel qui concerne mon manga en développement :</p>
-            <figure><img src="page1.png" alt="Page 1 du site Manga" class="project-img"></figure>
-    
-        </section>
-
-        <section id="services">
-            <h2>Mes Services</h2>
-            <div class="services-container">
-                <div class="service-card">
-                    <h3>Landing Page Basique</h3>
-                    <p class="price">200 € - 1 à 2 jours</p>
-                    <p>Inclut : Design responsive, formulaire de contact, mise en ligne</p>
-                </div>
-                <div class="service-card">
-                    <h3>Site Classique (Plusieurs Pages)</h3>
-                    <p class="price">400 € à 600 €</p>
-                    <p>Inclus : Design et intégration de 3 à 5 pages (ex: Accueil, Services, À Propos, Contact)</p>
-                </div>
-                <div class="service-card">
-                    <h3>Site E-commerce</h3>
-                    <p class="price">À partir de 1800 €</p>
-                    <p>Inclus : Design et intégration d'un site sur mesure, intégration d'une plateforme d'e-commerce, configuration des produits et des méthodes de paiement</p>
-                </div>
-                <div class="service-card local-service">
-                    <h3>Un service web local et sur mesure</h3>
-                    <p>En tant que développeur web local, je m'engage à être votre partenaire de proximité.</p>
-                    <p>Je me déplace dans un rayon de 10 km autour de Tourcoing pour vous rencontrer et discuter de vos besoins en personne.</p>
-                    <p>Mon approche est simple : vous offrir un service sur mesure et une relation de confiance.</p>
-                    <p>Ensemble, nous créerons un site web qui reflète l'âme de votre entreprise.</p>
-                </div>
+            <div class="service-card local-service">
+                <h3>Un service web local et sur mesure</h3>
+                <p>En tant que développeur web local, je m'engage à être votre partenaire de proximité.</p>
+                <p>Je me déplace dans un rayon de 10 km autour de Tourcoing pour vous rencontrer et discuter de vos besoins en personne.</p>
+                <p>Mon approche est simple : vous offrir un service sur mesure et une relation de confiance.</p>
+                <p>Ensemble, nous créerons un site web qui reflète l'âme de votre entreprise.</p>
             </div>
-            <button onclick="location.href='#contact'">Demander un devis gratuit</button>
-        </section>
+        </div>
+        <button onclick="location.href='#contact'">Demander un devis gratuit</button>
+    </section>
 
-        <section id="testimonials">
-            <h2>Témoignages</h2>
-            <div class="testimonial">
-                <p>"Diaby a créé un site parfait pour ma boulangerie ! Rapide et pro."</p>
-                <p class="author">- Jean Dupont, Boulangerie du Coin</p>
-            </div>
-            <div class="testimonial">
-                <p>"Super travail sur mon site manga, très satisfait !"</p>
-                <p class="author">- Marie L., Fan de manga</p>
-            </div>
-        </section>
+    <!-- Témoignages -->
+    <section id="testimonials">
+      <h2>Témoignages</h2>
+      <div class="testimonial">
+        <p>"Diaby a créé un site parfait pour ma boulangerie ! Rapide et pro."</p>
+        <p class="author">- Jean Dupont</p>
+      </div>
+    </section>
 
-        <section id="contact" class="contact-form-container">
-            <h2>Contactez-moi</h2>
-            <form action="https://formspree.io/f/xgvzzpgw" method="POST">
-                <label for="name">Votre Nom :</label>
-                <input type="text" id="name" name="user_name" required autocomplete="name">
-                <label for="email">Votre Email :</label>
-                <input type="email" id="email" name="user_email" required autocomplete="email">
-                <label for="message">Votre Message :</label>
-                <textarea id="message" name="user_message" required autocomplete="off"></textarea>
-                <!-- CAPTCHA hCaptcha avec site key -->
-                <div class="h-captcha" data-sitekey="264a5900-e4a6-4af6-9b2c-971e73749dbc"></div> <!-- Remplace par ta clé -->
-                <button type="submit">Envoyer</button>
-            </form>
-        </section>
-    </main>
+    <!-- Contact -->
+    <section id="contact" class="contact-form-container">
+      <h2>Contactez-moi</h2>
+      <form action="https://formspree.io/f/xgvzzpgw" method="POST">
+        <label for="name">Votre Nom :</label>
+        <input type="text" id="name" name="user_name" required>
+        <label for="email">Votre Email :</label>
+        <input type="email" id="email" name="user_email" required>
+        <label for="message">Votre Message :</label>
+        <textarea id="message" name="user_message" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
 
-    <button id="scrollToTopBtn" title="Retour en haut">↑</button>
+  <button id="scrollToTopBtn" title="Retour en haut">↑</button>
 
-    <footer>
-        <p>&copy; 2025 Diaby Sanossi - Développeur Web | SIRET : 838 131 811 00039</p>
-        <p>Basé à Bailleul, disponible dans un rayon de 10 km autour de Tourcoing</p>
-        <p>Pour me contacter, utilisez le formulaire ci-dessus.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Diaby Sanossi - Développeur Web | SIRET : 838 131 811 00039</p>
+  </footer>
 
-    <!-- Bannière de consentement aux cookies -->
-    <div id="cookie-consent" class="cookie-consent">
-        <p>Ce site utilise des cookies pour le formulaire de contact. <button onclick="acceptCookies()">Accepter</button></p>
-    </div>
-
-    <script src="script.js"></script>
-    <script>
-        // Gestion basique des cookies
-        function acceptCookies() {
-            document.getElementById('cookie-consent').style.display = 'none';
-            document.cookie = "cookieConsent=true; max-age=31536000"; // 1 an
-        }
-        // Vérifie si les cookies sont acceptés au chargement
-        window.onload = function() {
-            if (!document.cookie.includes("cookieConsent=true")) {
-                document.getElementById('cookie-consent').style.display = 'block';
-            }
-        };
+  <!-- petit script pour la preview sur mobile (affiche au clic) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Preview : sur mobile on veut un clic qui bascule l'affichage
+      const previewContainer = document.querySelector('.preview-container');
+      if (previewContainer) {
+        previewContainer.addEventListener('click', function (e) {
+          // si l'utilisateur clique sur le lien, on laisse le lien ouvrir
+          if (e.target.matches('.preview-link')) return;
+          // sinon toggle de la tooltip (pratique sur mobile)
+          const tooltip = previewContainer.querySelector('.preview-tooltip');
+          if (tooltip) tooltip.classList.toggle('visible');
+        });
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const skills = document.querySelectorAll(".skills");
+      skills.forEach(skill => {
+        const target = skill.getAttribute("data-skill"); // récupère 75, 50, etc.
+        skill.style.width = target + "%"; // déclenche l'animation
+      });
+    });
     </script>
 </body>
 </html>

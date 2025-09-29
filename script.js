@@ -26,3 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+ // Gestion basique des cookies
+ function acceptCookies() {
+    document.getElementById('cookie-consent').style.display = 'none';
+    document.cookie = "cookieConsent=true; max-age=31536000"; // 1 an
+}
+// Vérifie si les cookies sont acceptés au chargement
+window.onload = function() {
+    if (!document.cookie.includes("cookieConsent=true")) {
+        document.getElementById('cookie-consent').style.display = 'block';
+    }
+};

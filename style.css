@@ -407,3 +407,17 @@ footer a:hover {
         font-size: 0.8em;
     }
 }
+.project-link {
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00b894;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #008060;
+    text-decoration: underline;
+}
