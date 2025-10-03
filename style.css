@@ -14,7 +14,7 @@ body {
 }
 
 main {
-    padding: 20px; /* Pas de margin-left, plus de header */
+    padding: 20px;
 }
 
 .carte-profil {
@@ -51,7 +51,7 @@ ul {
     list-style: disc;
     padding-left: 0;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: justify;
     display: inline-block;
 }
 
@@ -59,7 +59,7 @@ ul {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background: white; /* Déjà corrigé à white */
+    background: white;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -94,15 +94,18 @@ ul {
     border-radius: 5px;
     width: 0;
     text-align: right;
-    color: white;
+    color: #fff;
     padding-right: 5px;
     transition: width 1s ease-in-out;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8); 
 }
 
-.skills.html { background: #ff5733; }
-.skills.css { background: #33ff57; }
-.skills.javascript { background: #5733ff; }
+.skills.html { background: #e74c3c; }   
+.skills.css { background: #27ae60; }    
+.skills.javascript { background: #2980b9; } 
 
+/* ===================== Projets ===================== */
 .section-projets {
     max-width: 800px;
     margin: 20px auto;
@@ -124,14 +127,43 @@ ul {
     border-radius: 5px;
 }
 
-#services {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.project-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #2c3e50; 
+    color: #ffffff; 
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #e74c3c; /* Rouge vif au survol */
+    color: #fff;
+}
+
+/* ===================== Services ===================== */
+#services button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #e74c3c, #c0392b); /* rouge dégradé */
+    border: none;
     border-radius: 8px;
-    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+}
+#services button:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
 }
 
 .services-container {
@@ -186,22 +218,7 @@ ul {
     text-align: left;
 }
 
-#services button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1.1em;
-    color: #fff;
-    background-color: #00ffcc;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#services button:hover {
-    background-color: #00b894;
-}
-
+/* ===================== Formulaire ===================== */
 .contact-form-container {
     max-width: 600px;
     margin: 20px auto;
@@ -227,18 +244,22 @@ ul {
 }
 
 .contact-form-container button {
-    background: #00ffcc;
+    background: #2c3e50;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
     width: 100%;
+    color: #fff;
+    font-weight: bold;
+    transition: background 0.3s;
 }
 
 .contact-form-container button:hover {
-    background: #00b894;
+    background: #e74c3c;
 }
 
+/* ===================== Témoignages ===================== */
 #testimonials {
     max-width: 800px;
     margin: 20px auto;
@@ -267,23 +288,26 @@ ul {
     margin-top: 10px;
 }
 
+/* ===================== Scroll top ===================== */
 #scrollToTopBtn {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #00ffcc;
+    background: #2c3e50;
     border: none;
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
     display: none;
     font-size: 18px;
+    color: #fff;
 }
 
 #scrollToTopBtn:hover {
-    background: #00b894;
+    background: #e74c3c;
 }
 
+/* ===================== Footer ===================== */
 footer {
     background: #2c3e50;
     color: #fff;
@@ -306,6 +330,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* ===================== Cookies ===================== */
 .cookie-consent {
     position: fixed;
     bottom: 0;
@@ -338,7 +363,7 @@ footer a:hover {
     background: #00b894;
 }
 
-/* Media queries pour responsive */
+/* ===================== Responsive ===================== */
 @media (max-width: 768px) {
     main {
         padding: 10px;
@@ -406,18 +431,4 @@ footer a:hover {
     footer p {
         font-size: 0.8em;
     }
-}
-.project-link {
-    display: inline-block;
-    margin: 10px 0;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #00b894;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.project-link:hover {
-    color: #008060;
-    text-decoration: underline;
 }
