@@ -405,6 +405,50 @@ footer a:hover {
 .cookie-consent button:hover {
     background: #00b894;
 }
+#services {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+  
+  .service-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 25px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+  
+  .service-card h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .service-card .price {
+    color: #c0392b;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .local-service {
+    margin: 40px auto 0 auto;
+    max-width: 700px;
+    text-align: center;
+  }
 
 /* ===================== Responsive ===================== */
 @media (max-width: 768px) {
