@@ -519,3 +519,82 @@ footer a:hover {
         font-size: 0.8em;
     }
 }
+/* ===================== Séparation claire entre projets ===================== */
+.projets-groupe {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .projets-titre {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #e74c3c;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .project-bloc {
+    margin: 20px auto;
+    padding: 15px 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    max-width: 700px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  
+  .separateur-projets {
+    text-align: center;
+    margin: 50px 0;
+    position: relative;
+  }
+  
+  .separateur-projets span {
+    font-size: 1.5em;
+    color: #e74c3c;
+    font-weight: bold;
+    letter-spacing: 5px;
+  }
+  
+  .separateur-projets::before,
+  .separateur-projets::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 2px;
+    background: #ddd;
+  }
+  
+  .separateur-projets::before {
+    left: 0;
+  }
+  
+  .separateur-projets::after {
+    right: 0;
+  }
+  .separator {
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    margin: 40px auto;
+    width: 60%;
+    border-radius: 2px;
+  }
+  
+  .projets-personnels h3,
+  .projets-clients h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  
+  .project-block {
+    background: #ffffff;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
