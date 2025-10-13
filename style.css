@@ -399,3 +399,12 @@ footer a {
       border-radius: 0;
   }
 }
+body.menu-open {
+  overflow: hidden; /* Ceci désactive le défilement */
+  position: fixed; /* Ceci peut aussi être utilisé pour fixer la position au moment de l'ouverture */
+  width: 100%;
+}
+body {
+  /* Permet le défilement vertical, bloque le défilement horizontal */
+  overflow-x: hidden; 
+}
