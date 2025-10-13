@@ -31,9 +31,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="script.js">
-
-</head>
+  
+  </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
 
@@ -125,20 +124,52 @@
         <input id="email" name="user_email" type="email" required />
         <label for="message">Message</label>
         <textarea id="message" name="user_message" rows="6" required></textarea>
+        
+        <p style="font-size: 0.8em; margin-top: 15px; margin-bottom: 15px;">
+          <strong>Information RGPD :</strong> En soumettant ce formulaire, vous consentez à ce que les informations saisies soient utilisées par Sanossi Diaby pour vous recontacter. 
+          Pour connaître et exercer vos droits, notamment le retrait de votre consentement, veuillez consulter notre 
+          <a href="mentions-legales.html#gestion-donnees" style="color: #007bff; text-decoration: underline;">politique de gestion des données personnelles</a>.
+        </p>
+
         <button type="submit">Envoyer</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 <strong>Sanossi Diaby</strong> — Développeur Web à Tourcoing</p>
-    <p><a href="/sitemap.xml">Sitemap</a> | <a href="/robots.txt">Robots.txt</a></p>
+
+
+  <footer>
+   
+
+    <p style="margin-bottom: 5px;">&copy; 2025 <strong>Sanossi Diaby</strong> — Développeur Web à Tourcoing</p>
+      
+      <div class="legal-links" style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 5px;">
+          <a href="mentions-legales.html" style="color: #ccc; text-decoration: none; padding: 0 8px;">Mentions Légales</a>
+          <span style="color: #777;">|</span>
+          <a href="conditions-générale-des-ventes.html" style="color: #ccc; text-decoration: none; padding: 0 8px;">Conditions Générales de Vente (CGV)</a>
+          <span style="color: #777;">|</span>
+          <a id="manage-cookies-link" href="#" onclick="showCookieBanner()" style="color: #ccc; text-decoration: none; padding: 0 8px;">Gestion des cookies</a>
+          <span style="color: #777;">|</span>
+          <a href="mentions-legales.html#gestion-donnees" style="color: #ccc; text-decoration: none; padding: 0 8px;">Données Personnelles</a>
+          <span style="color: #777;">|</span>
+          <a href="/sitemap.xml" style="color: #ccc; text-decoration: none; padding: 0 8px;">Sitemap</a>
+          <span style="color: #777;">|</span>
+          <a href="/robots.txt" style="color: #ccc; text-decoration: none; padding: 0 8px;">Robots.txt</a>
+      </div>
+  
+  
   </footer>
 
-  <div id="cookie-banner" hidden>
-    <p>Ce site utilise des cookies pour améliorer l'expérience. <a href="#" style="color:#fff;text-decoration:underline">En savoir plus</a></p>
+  <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #222; color: white; padding: 15px; text-align: center; z-index: 10000; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); display: none;">
+
+    <p style="margin: 0 0 10px 0; font-size: 0.9em;">
+      Ce site utilise des cookies pour l'analyse d'audience. Vous avez le choix de les accepter ou de les refuser.
+      <a href="mentions-legales.html#cookies" style="color: #4CAF50; text-decoration: underline;">En savoir plus (Politique de cookies)</a>
+    </p>
     <div>
-      <button id="cookie-ok" onclick="acceptCookies()">J'ai compris</button>
+      <button id="cookie-accept" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; margin: 5px; border-radius: 5px;" onclick="setConsent(true)">Accepter</button>
+      <button id="cookie-reject" style="background-color: #f44336; color: white; padding: 10px 20px; border: none; cursor: pointer; margin: 5px; border-radius: 5px;" onclick="setConsent(false)">Refuser</button>
     </div>
   </div>
 
