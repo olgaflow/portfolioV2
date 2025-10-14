@@ -358,7 +358,7 @@ footer a {
   }
 }
 
-/* Mobiles (Correction du Menu Burger ici !) */
+
 /* Mobiles (Correction du Menu Burger pour ouverture à DROITE !) */
 @media (max-width: 800px) {
   /* **CORRECTION DU MENU BURGER** */
@@ -409,4 +409,67 @@ body.menu-open {
 body {
   /* Permet le défilement vertical, bloque le défilement horizontal */
   overflow-x: hidden; 
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff; /* Ajuste la couleur selon ton design */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-toggle {
+  display: none; /* Caché par défaut sur desktop */
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#site-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Horizontal sur desktop */
+}
+
+#site-menu li {
+  margin-left: 20px;
+}
+
+#site-menu a {
+  text-decoration: none;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Affiché sur mobile */
+  }
+
+  #site-menu {
+    display: none; /* Caché par défaut sur mobile */
+    position: absolute;
+    top: 60px; /* Sous la navbar */
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  #site-menu.active {
+    display: flex; /* Affiché quand activé */
+  }
+
+  #site-menu li {
+    margin: 10px 0;
+  }
 }
