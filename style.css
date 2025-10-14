@@ -6,7 +6,7 @@
   --blue: #004aad;
   --dark: #002b66;
   --muted: #6b7280;
-  --accent: #d32f2f;
+  --accent: #d32f2f; /* Utilisé pour les prix */
   --bg: #f5f7fb;
   --maxw: 1100px;
   --radius: 10px;
@@ -22,7 +22,10 @@ html, body {
   font-family: Roboto, Arial, sans-serif;
   background: var(--bg);
   color: #182026;
-  scroll-behavior: smooth; /* Pour un défilement fluide des ancres */
+  scroll-behavior: smooth; 
+  
+  /* CORRECTION ESSENTIELLE : Cache tout ce qui dépasse horizontalement */
+  overflow-x: hidden; 
 }
 
 a {
@@ -31,7 +34,7 @@ a {
 }
 
 a:focus {
-  outline: 3px solid #ffd966; /* Améliore l'accessibilité */
+  outline: 3px solid #ffd966; 
 }
 
 /* Lien pour sauter le contenu (accessibilité) */
@@ -60,6 +63,7 @@ a:focus {
 /* =================================== */
 
 header {
+  /* La position "sticky" fonctionne bien avec l'effet fixant du header */
   background: linear-gradient(180deg, var(--blue), var(--dark));
   color: #fff;
   position: sticky;
@@ -223,11 +227,45 @@ h2 {
 }
 
 
-
+/* --- CORRECTIONS ET AMÉLIORATIONS DES SERVICES --- */
 .services-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  /* Utilise Flexbox pour un meilleur contrôle de l'espacement */
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  /* Ajout d'un gap pour séparer les services */
+  gap: 25px; 
+  margin-top: 20px;
+}
+
+.service-card {
+  /* Définit une largeur de base pour que 2-3 cartes s'affichent sur desktop */
+  width: 300px; 
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(3, 10, 33, 0.04);
+  background: #fff;
+
+  /* ESSENTIEL pour l'effet de zoom fluide */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+  
+  /* S'assurer que les cartes sont de la même hauteur (si le contenu le permet) */
+  display: flex;
+  flex-direction: column;
+}
+
+/* L'effet de zoom au survol */
+.service-card:hover {
+  transform: scale(1.05); /* Zoom de 5% */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Ombre plus marquée */
+  cursor: pointer;
+}
+
+/* Pour pousser le prix et la liste vers le bas sur les cartes de hauteurs différentes */
+.service-card ul {
+    margin-top: auto; 
+    padding-left: 20px; 
+    font-size: 0.9em;
 }
 
 .price {
@@ -335,19 +373,25 @@ footer a {
   background-color: var(--dark);
 }
 
-/* --- AMÉLIORATION DES LIENS DU FOOTER (PARTIE LÉGALE) --- */
-/* Le pied de page est géré par les styles en ligne pour éviter l'écrasement */
-
-
 /* =================================== */
 /* --- RESPONSIVE DESIGN --- */
 /* =================================== */
 
 /* Tablettes et mobiles larges */
 @media (max-width: 900px) {
-  .project-grid, .services-container {
+  /* Passe les grilles sur une seule colonne */
+  .project-grid {
       grid-template-columns: 1fr;
   }
+  
+  /* Permet aux cartes de service d'être plus grandes sur tablette */
+  .services-container {
+      gap: 20px;
+  }
+  .service-card {
+      width: 100%;
+  }
+
   .about {
       flex-direction: column;
       text-align: center;
@@ -359,32 +403,38 @@ footer a {
 }
 
 
-/* Mobiles (Correction du Menu Burger pour ouverture à DROITE !) */
+/* Mobiles (Max 800px) */
 @media (max-width: 800px) {
-  /* **CORRECTION DU MENU BURGER** */
+  /* 1. Afficher le bouton burger */
+  .menu-toggle {
+      display: inline-block;
+  }
+  
+  /* 2. Cacher le menu sur desktop et le préparer pour le mobile */
   .nav-links {
       position: absolute; 
-      right: -100%; /* <-- CACHE LE MENU HORS ÉCRAN À DROITE */
+      right: -100%; /* CACHE LE MENU HORS ÉCRAN À DROITE */
 
       flex-direction: column;
       background: var(--dark);
-      top: 60px;
+      top: 60px; /* Commence juste en dessous du header */
       width: 70%; 
       max-width: 250px;
       padding: 10px 0;
       border-radius: 0 0 6px 6px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: right 0.3s ease-in-out; /* <-- On anime la propriété 'right' */
+      transition: right 0.3s ease-in-out; /* On anime la propriété 'right' */
       z-index: 999;
   }
 
-  /* **CLASSE CRUCIALE : Ajoutée par JavaScript pour ouvrir le menu** */
+  /* 3. CLASSE CRUCIALE : Ajoutée par JavaScript pour ouvrir le menu */
   .nav-links.nav-links-open {
-      right: 0; /* <-- RAMÈNE LE MENU SUR L'ÉCRAN À DROITE */
+      right: 0; /* RAMÈNE LE MENU SUR L'ÉCRAN À DROITE */
   }
 
-  .menu-toggle {
-      display: inline-block;
+  /* Pour éviter le défilement du contenu derrière le menu */
+  body.menu-open {
+    overflow-y: hidden; 
   }
   
   /* Autres ajustements mobiles */
@@ -399,77 +449,5 @@ footer a {
       right: 0;
       padding: 15px;
       border-radius: 0;
-  }
-}
-body.menu-open {
-  overflow: hidden; /* Ceci désactive le défilement */
-  position: fixed; /* Ceci peut aussi être utilisé pour fixer la position au moment de l'ouverture */
-  width: 100%;
-}
-body {
-  /* Permet le défilement vertical, bloque le défilement horizontal */
-  overflow-x: hidden; 
-}
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #fff; /* Ajuste la couleur selon ton design */
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.menu-toggle {
-  display: none; /* Caché par défaut sur desktop */
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-#site-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex; /* Horizontal sur desktop */
-}
-
-#site-menu li {
-  margin-left: 20px;
-}
-
-#site-menu a {
-  text-decoration: none;
-  color: #333;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* Affiché sur mobile */
-  }
-
-  #site-menu {
-    display: none; /* Caché par défaut sur mobile */
-    position: absolute;
-    top: 60px; /* Sous la navbar */
-    left: 0;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  #site-menu.active {
-    display: flex; /* Affiché quand activé */
-  }
-
-  #site-menu li {
-    margin: 10px 0;
   }
 }
