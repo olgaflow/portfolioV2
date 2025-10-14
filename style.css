@@ -63,7 +63,6 @@ a:focus {
 /* =================================== */
 
 header {
-  /* La position "sticky" fonctionne bien avec l'effet fixant du header */
   background: linear-gradient(180deg, var(--blue), var(--dark));
   color: #fff;
   position: sticky;
@@ -111,7 +110,7 @@ header {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Bouton du menu mobile, caché par défaut */
+/* Bouton du menu mobile, caché par défaut sur desktop */
 .menu-toggle {
   display: none;
   background: transparent;
@@ -229,18 +228,16 @@ h2 {
 
 /* --- CORRECTIONS ET AMÉLIORATIONS DES SERVICES --- */
 .services-container {
-  /* Utilise Flexbox pour un meilleur contrôle de l'espacement */
+  /* Utilise Flexbox pour un meilleur contrôle de l'espacement et de la disposition */
   display: flex;
   flex-wrap: wrap; 
   justify-content: center;
-  /* Ajout d'un gap pour séparer les services */
-  gap: 25px; 
+  gap: 25px; /* Espace entre les cartes */
   margin-top: 20px;
 }
 
 .service-card {
-  /* Définit une largeur de base pour que 2-3 cartes s'affichent sur desktop */
-  width: 300px; 
+  width: 300px; /* Largeur par défaut sur desktop */
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 4px 14px rgba(3, 10, 33, 0.04);
@@ -249,7 +246,7 @@ h2 {
   /* ESSENTIEL pour l'effet de zoom fluide */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
   
-  /* S'assurer que les cartes sont de la même hauteur (si le contenu le permet) */
+  /* S'assurer que les cartes sont de la même hauteur (utile pour l'organisation interne) */
   display: flex;
   flex-direction: column;
 }
@@ -377,17 +374,14 @@ footer a {
 /* --- RESPONSIVE DESIGN --- */
 /* =================================== */
 
-/* Tablettes et mobiles larges */
+/* Tablettes et mobiles larges (900px et moins) */
 @media (max-width: 900px) {
   /* Passe les grilles sur une seule colonne */
   .project-grid {
       grid-template-columns: 1fr;
   }
   
-  /* Permet aux cartes de service d'être plus grandes sur tablette */
-  .services-container {
-      gap: 20px;
-  }
+  /* Les cartes de service prennent toute la largeur sur tablette */
   .service-card {
       width: 100%;
   }
@@ -403,27 +397,28 @@ footer a {
 }
 
 
-/* Mobiles (Max 800px) */
+/* Mobiles (800px et moins) */
 @media (max-width: 800px) {
-  /* 1. Afficher le bouton burger */
+  
+  /* 1. Afficher le bouton burger (CORRIGÉ ET FORCÉ AVEC !important) */
   .menu-toggle {
-      display: inline-block;
+      display: inline-block !important; 
   }
   
-  /* 2. Cacher le menu sur desktop et le préparer pour le mobile */
+  /* 2. Style et positionnement du menu mobile */
   .nav-links {
       position: absolute; 
       right: -100%; /* CACHE LE MENU HORS ÉCRAN À DROITE */
 
       flex-direction: column;
       background: var(--dark);
-      top: 60px; /* Commence juste en dessous du header */
+      top: 60px; 
       width: 70%; 
       max-width: 250px;
       padding: 10px 0;
       border-radius: 0 0 6px 6px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: right 0.3s ease-in-out; /* On anime la propriété 'right' */
+      transition: right 0.3s ease-in-out; 
       z-index: 999;
   }
 
