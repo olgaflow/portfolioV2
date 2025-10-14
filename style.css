@@ -222,6 +222,8 @@ h2 {
   margin: 8px 0 6px;
 }
 
+
+
 .services-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
