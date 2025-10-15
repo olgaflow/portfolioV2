@@ -213,6 +213,12 @@ h2 {
   gap: 16px;
 }
 
+.project-card {
+    /* Rendre le contenu flexible pour pouvoir pousser les liens en bas */
+    display: flex;
+    flex-direction: column;
+}
+
 .project-card img {
   width: 100%;
   height: 150px;
@@ -223,6 +229,63 @@ h2 {
 
 .project-card h3 {
   margin: 8px 0 6px;
+}
+
+/* =================================== */
+/* --- STYLISATION DES BOUTONS DE PROJET --- */
+/* =================================== */
+
+/* Conteneur de liens dans les cartes de projet */
+.projet-liens {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    /* Pousse le conteneur de liens au bas de la carte, pour uniformiser les hauteurs */
+    margin-top: auto; 
+    padding-top: 10px;
+}
+
+/* Style de base pour les petits boutons CTA (Voir Démo / Code Source) */
+.cta-small {
+    /* Rends les boutons plus flexibles en largeur */
+    flex: 1 1 0; 
+    max-width: 150px; 
+    
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.1s;
+    font-size: 0.9em;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Bouton Principal (Voir Démo) */
+.lien-demo {
+    background-color: var(--blue);
+    color: #fff !important; /* Force la couleur blanche, pour annuler le style 'a' de base */
+    border: 1px solid var(--blue);
+}
+
+.lien-demo:hover {
+    background-color: var(--dark);
+    transform: translateY(-1px);
+}
+
+/* Bouton Secondaire (Code Source) */
+.lien-code.secondary {
+    background-color: #fff;
+    color: var(--blue) !important;
+    border: 1px solid var(--blue);
+}
+
+.lien-code.secondary:hover {
+    background-color: var(--bg);
+    color: var(--dark) !important;
+    border-color: var(--dark);
+    transform: translateY(-1px);
 }
 
 
@@ -316,6 +379,17 @@ footer a {
   color: var(--blue);
 }
 
+/* Amélioration des liens du Footer pour être plus lisibles */
+.legal-links a {
+    color: var(--muted) !important; /* Couleur gris clair pour la légalité */
+    transition: color 0.2s;
+}
+
+.legal-links a:hover {
+    color: var(--blue) !important;
+    text-decoration: underline;
+}
+
 #cookie-banner {
   position: fixed;
   left: 12px;
@@ -335,6 +409,12 @@ footer a {
 #cookie-banner p {
   margin: 0;
   font-size: 0.95rem;
+}
+
+/* Amélioration des liens du bandeau de cookies */
+#cookie-banner a {
+    color: #ffd966; /* Couleur accentuée pour le lien d'information */
+    text-decoration: underline;
 }
 
 #cookie-banner button {
@@ -444,5 +524,14 @@ footer a {
       right: 0;
       padding: 15px;
       border-radius: 0;
+  }
+  
+  /* Ajustement des boutons de projet sur mobile */
+  .projet-liens {
+      flex-direction: column;
+      gap: 8px;
+  }
+  .cta-small {
+      max-width: 100%; /* Les boutons prennent toute la largeur */
   }
 }
